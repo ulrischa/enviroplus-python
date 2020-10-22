@@ -180,7 +180,8 @@ def send_to_luftdaten(values, id):
                 "X-Sensor": id,
                 "Content-Type": "application/json",
                 "cache-control": "no-cache"
-            }
+            },
+            timeout = 30
         )
 
         resp_2 = requests.post(
@@ -194,7 +195,8 @@ def send_to_luftdaten(values, id):
                 "X-Sensor": id,
                 "Content-Type": "application/json",
                 "cache-control": "no-cache"
-            }
+            },
+            timeout = 30
         )
 
         if resp_1.ok and resp_2.ok:
