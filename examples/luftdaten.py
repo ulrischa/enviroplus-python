@@ -233,9 +233,9 @@ while True:
     try:
         time_since_update = time.time() - update_time
         values = read_values()
-        log_values(values)
         # print(values)
         if time_since_update > 120 and check_wifi() :
+            log_values(values)
             resp = send_to_luftdaten(values, id)
             update_time = time.time()
             print("Response: {}\n".format("ok luftdaten" if resp else "failed luftdaten"))
